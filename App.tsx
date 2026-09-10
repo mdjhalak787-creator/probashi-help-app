@@ -1,20 +1,20 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-// আপনার ফাইল অনুযায়ী ইমপোর্টগুলো মিলিয়ে নেবেন
 import AdminDashboard from './AdminDashboard';
 import SuperAdminDashboard from './SuperAdminDashboard';
 import AgentDashboard from './AgentDashboard';
-import Profile from './Profile'; 
+// আপনার অন্যান্য পেজগুলো ইমপোর্ট করে নেবেন
 
 function App() {
   return (
     <Router>
-      <Routes>
-        <Route path="/profile" element={<Profile />} />
-        <Route path="/admin" element={<AdminDashboard />} />
-        <Route path="/super-admin" element={<SuperAdminDashboard />} />
-        <Route path="/agent" element={<AgentDashboard />} />
-        {/* আপনার অন্যান্য পেজের রাউট এখানে বসবে */}
-      </Routes>
+      <div className="min-h-screen bg-gray-900 text-white font-sans">
+        <Routes>
+          <Route path="/" element={<div className="p-4">হোম পেজ</div>} />
+          <Route path="/admin" element={<AdminDashboard />} />
+          <Route path="/super-admin" element={<SuperAdminDashboard />} />
+          <Route path="/agent" element={<AgentDashboard />} />
+        </Routes>
+      </div>
     </Router>
   );
 }
