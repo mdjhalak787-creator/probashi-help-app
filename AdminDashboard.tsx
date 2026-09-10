@@ -12,7 +12,6 @@ export default function AdminDashboard() {
 
   const fetchData = async () => {
     try {
-      // ডেটাবেজ থেকে আসল ডেটা ফেচ করার লজিক
       const { count } = await supabase.from('users').select('*', { count: 'exact' });
       setStats({ users: count || 0, active: count || 0 });
     } catch (error) {
